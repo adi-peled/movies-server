@@ -10,11 +10,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 if (process.env.NODE_ENV === 'production') {
 
-    app.use(express.static('build'));
-    app.get('*', (req, res) => {
-        req.sendFile(path.resolve(__dirname, 'build', 'index.html'))
-    })
-    // app.use(express.static(path.resolve(__dirname, 'build')));
+    // app.use(express.static('build'));
+    // app.get('*', (req, res) => {
+    //     req.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+    // })
+    app.use(express.static(path.resolve(__dirname, 'build')));
 } else {
     const corsOptions = {
         origin: '*',
