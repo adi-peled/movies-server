@@ -1,11 +1,12 @@
 import { ResService } from "../../../services/resHandler.service.js";
 import axios from 'axios'
 import dotenv from 'dotenv'
+import fs from 'fs'
+import movies from '../../../data/movies.json' assert {type: "json"};
 dotenv.config()
 const base_url = 'https://www.omdbapi.com?type=movie'
 const apikey = process.env.apikey
-import fs from 'fs'
-import movies from '../../../data/movies.json' assert {type: "json"};
+console.log({apikey});
 export class MovieController {
 
     static async getDefault(req, res) {
