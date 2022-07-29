@@ -10,6 +10,7 @@ console.log({apikey});
 export class MovieController {
 
     static async getDefault(req, res) {
+        console.log('getDefault');
         try {
             if (movies.length) {
                 ResService.handleSuccess(res, movies)
